@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@media (max-width: 767px) {
+  /* estilos que se aplican solo en pantallas con un ancho máximo de 767px */
+  body {
+    background-image: url(../multimedia/imagenes/web/wallpaper_2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  main {
+    margin-bottom: 15vw;
+  }
+  #menu_principal {
+    height: 15vw;
+  }
+  #menu_principal a {
+    font-size: 250%;
+    color: #b1d0b1;
+  }
+  #titulo_principal {
+    height: -moz-min-content;
+    height: min-content;
+    background-color: white;
+  }
+  #titulo_principal p {
+    text-align: justify;
+  }
+  #titulo_principal h1 {
+    font-size: 15vw;
+    color: #e6d3b6;
+  }
+  .relleno {
+    height: 150vh !important;
+  }
+  .active {
+    background: linear-gradient(to bottom, #b1d0b1, #191919);
+    border-radius: 50px;
+    margin-bottom: 50px !important;
+  }
+  .link {
+    color: #584c42;
+    background: rgba(230, 230, 230, 0.5);
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .notes {
+    text-align: justify;
+  }
+  .destino .informacion h2 {
+    color: #4c5b5c;
+  }
+  .destino .informacion h3 {
+    color: #b1d0b1;
+  }
+  .destino p {
+    color: rgba(76, 91, 92, 0.77);
+  }
+  .destino .boton_fecha {
+    background-color: #4c5b5c;
+    color: #a4c4a8;
+  }
+  .titulo {
+    font-size: 100px !important;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    color: #a4c4a8;
+    text-shadow: #4c5b5c 2px 2px 1px;
+  }
+  .titulo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 60%;
+    height: 100%;
+    background-color: #4c5b5c;
+    transform: skewX(-30deg);
+    animation: deslizar 2s ease-in-out forwards;
+  }
+  .titulo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30%;
+    width: 60%;
+    height: 100%;
+    background-color: #4c5b5c;
+    transform: skewX(30deg);
+    animation: deslizar 2s ease-in-out forwards;
+  }
+  @keyframes deslizar {
+    0% {
+      transform: skewX(-30deg) translateX(-100%);
+    }
+    100% {
+      transform: skewX(-30deg) translateX(0%);
+    }
+  }
+  select, .up_down {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4c5b5c;
+    background-color: #d6e3d3;
+    border: 2px solid #a4c4a8;
+    border-radius: 8px;
+    padding: 8px;
+  }
+  option {
+    font-size: 14px;
+    color: #4c5b5c;
+    background-color: #b1d0b1;
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  option:hover {
+    background-color: #a4c4a8;
+  }
+  .up_down button {
+    color: #4c5b5c;
+    background-color: transparent;
+    border: none;
+  }
+}/*# sourceMappingURL=style.css.map */
