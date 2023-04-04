@@ -9,7 +9,7 @@ class Visitado extends Model
 {
     use HasFactory;
 
-    protected $table = 'destinos';
+    protected $table = 'visitados';
     protected $primaryKey = 'ID';
-    protected $fillable = ['NOM', 'WEB', 'HOT_APAR','IMG','FEC_PREV','NOTES'];
+    protected $fillable = ['NOM', 'WEB', 'LOC', 'HOT_APAR', 'PRE', 'DIN_GASTADO', 'IMG', 'NOTES', 'VAL'];
 }

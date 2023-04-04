@@ -29,7 +29,7 @@ Route::get('/destinos', [DestinoController::class, 'index'])->name('destinos');
 Route::post('/destinos', [DestinoController::class, 'cambiaSesion'])->name('cambia_sesion');
 // Route::post('/destinos', [DestinoController::class, 'cambiaFiltro'])->name('cambiar_filtro');
 
+Route::post('/destinos/visitado', [DestinoController::class, 'marcarComoVisitado'])->name('visitado');
+
 //Visitados
-Route::get('/visitados', function () {
-    return view('visitados');
-})->name('visitados');
+Route::get('/visitados', [VisitadoController::class, 'index'])->name('visitados');

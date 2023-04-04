@@ -3,19 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Visitado;
 
-class VisitadoController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $filtro = 'asc';
-        $nombre = 'NOM';
-        $visitados = Visitado::orderBy($nombre, $filtro)->get();
-        return view('visitados', compact('visitados'));
+        //
     }
 
     /**

@@ -4,7 +4,7 @@
     /* estilos que se aplican solo en pantallas con un ancho máximo de 767px */
     // GENERAL
     body {
-        background-image: url(../multimedia/imagenes/web/wallpaper_2.jpg);
+        background-image: url(../multimedia/imagenes/web/wallpaper_7.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         // background-size: 150vh;
@@ -12,15 +12,16 @@
         overflow-x: hidden;
     }
 
-    main{
+    main {
         margin-bottom: 15vw;
     }
 
     #menu_principal {
         height: 15vw;
+        box-shadow: 0px -1px 3px 0px rgba($verde_oscuro, 0.25);
         a {
             font-size: 250%;
-            color: $verde_suave;
+            color: $verde_oscuro;
         }
     }
 
@@ -34,11 +35,11 @@
 
         h1 {
             font-size: 15vw;
-            color: $beige_claro;
+            color: $verde_oscuro;
         }
     }
 
-    .relleno{
+    .relleno {
         height: 150vh !important;
     }
 
@@ -49,8 +50,8 @@
     }
 
     .link {
-        color: $marron_oscuro;
-        background: rgba($gris-claro, 0.5);
+        color: $verde_oscuro;
+        background: rgba($verde-gris-claro, 0.5);
         margin: 5px;
         padding: 5px;
         text-decoration: none;
@@ -61,24 +62,24 @@
     }
 
     .destino {
+        background-color: $gris_claro;
         .informacion {
             h2 {
                 color: $verde_oscuro;
             }
 
             h3 {
-                color: $verde_suave;
+                color: $verde_claro;
             }
         }
-        p{
+        p {
             color: rgba($verde_oscuro, 0.77);
         }
-        .boton_fecha{
+        .boton_fecha {
             background-color: $verde_oscuro;
             color: $verde_claro;
         }
     }
-
 
     .titulo {
         font-size: 100px !important;
@@ -87,70 +88,85 @@
         position: relative;
         color: $verde_claro;
         text-shadow: $verde_oscuro 2px 2px 1px;
-      }
-      
-      .titulo::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -30%;
-        width: 60%;
-        height: 100%;
-        background-color: $verde_oscuro;
-        transform: skewX(-30deg);
-        animation: deslizar 2s ease-in-out forwards;
-      }
-      
-      .titulo::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: -30%;
-        width: 60%;
-        height: 100%;
-        background-color: $verde_oscuro;
-        transform: skewX(30deg);
-        animation: deslizar 2s ease-in-out forwards;
-      }
-      
-      @keyframes deslizar {
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -30%;
+            width: 60%;
+            height: 100%;
+            background-color: $verde_oscuro;
+            transform: skewX(-30deg);
+            animation: deslizar 2s ease-in-out forwards;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -30%;
+            width: 60%;
+            height: 100%;
+            background-color: $verde_oscuro;
+            transform: skewX(30deg);
+            animation: deslizar 2s ease-in-out forwards;
+        }
+    }
+
+    @keyframes deslizar {
         0% {
-          transform: skewX(-30deg) translateX(-100%);
+            transform: skewX(-30deg) translateX(-100%);
         }
         100% {
-          transform: skewX(-30deg) translateX(0%);
+            transform: skewX(-30deg) translateX(0%);
         }
-      }
+    }
 
-      select, .up_down {
+    select,
+    .up_down {
         font-size: 16px;
         font-weight: bold;
-        color: $verde_oscuro;
-        background-color: $verde_gris_claro;
-        border: 2px solid $verde_claro;
+        color: $verde_claro;
+        background-color: $verde_oscuro;
+        border: none;
         border-radius: 8px;
         padding: 8px;
-      }
-      
-      option {
+    }
+
+    option {
         font-size: 14px;
         color: $verde_oscuro;
         background-color: $verde_suave;
         border: none;
         border-radius: 4px;
         padding: 4px;
-      }
-      
-      option:hover {
-        background-color: $verde_claro;
-      }
+        &:hover {
+            background-color: $verde_gris_claro;
+        }
+    }
 
-      .up_down{
-        button{
-            color: $verde_oscuro;
+    .up_down {
+        button {
+            color: $verde_claro;
             background-color: transparent;
             border: none;
         }
-      }
-      
+    }
+
+    .visitado {
+        border: none !important;
+        background-color: $verde_oscuro !important;
+        color: $verde_claro !important;
+        font-weight: bold !important;
+        height: 50px !important;
+    }
+
+    .swal-overlay {
+        background-color: rgba($verde_claro, 0.5);
+    }
+
+    .txt-grey {
+        color: $verde_gris_claro !important;
+    }
 }

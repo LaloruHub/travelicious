@@ -4,30 +4,47 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Destino;
+use App\Models\Visitado;
 
 class DestinoController extends Controller
 {
+    public function marcarComoVisitado(Request $request)
+    {
+        $id = $request->input('id');
+        // Eliminar el registro de la tabla "Destinos"
+        Destino::where('id', $id)->delete();
 
+        // Agregar un nuevo registro a la tabla "Visitados"
+        Visitado::create([
+            'ID' => $id,
+            'NOM' => $request->input('nom'),
+            'LOC' => $request->input('loc'),
+            'WEB' => $request->input('web'),
+            'HOT_APAR' => $request->input('hot_apar'),
+            'PRE' => $request->input('pre'),
+            'DIN_GASTADO' => $request->input('pre'),
+            'IMG' => $request->input('img'),
+            'NOTES' => $request->input('notes'),
+            'VAL' => 2,
+        ]);
+
+        return redirect()->back();
+    }
 
     public function cambiaSesion(Request $request)
     {
-        if (session()->has('filtro')) {
-            if (session()->get('filtro') === 'asc') {
-                session()->put('filtro', 'desc');
-            } else {
-                session()->put('filtro', 'asc');
-            }
-        } else {
-            session(['filtro' => 'asc']);
-        }
-        return $this->index();
+        $filtro = session()->get('filtro');
+        $nuevoFiltro = $filtro === 'asc' ? 'desc' : 'asc';
+        session()->put('filtro', $nuevoFiltro);
+        return redirect()->back();
     }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        if(!session()->has('filtro')){
+        if (!session()->has('filtro')) {
             session(['filtro' => 'asc']);
         }
         $filtro = session()->get('filtro');
