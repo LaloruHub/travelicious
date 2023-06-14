@@ -142,4 +142,7 @@
   .txt-grey {
     color: #d6e3d3 !important;
   }
+  #login-form {
+    height: 100vh !important;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DestinoController;
 use App\Http\Controllers\VisitadoController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,16 @@ Route::get('/welcome', function () {
 Route::get('/', function () {
     return view('index');
 })->name('index');
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
-//Destinos
+//DESTINOS
 Route::get('/destinos', [DestinoController::class, 'index'])->name('destinos');
 Route::post('/destinos', [DestinoController::class, 'cambiaSesion'])->name('cambia_sesion');
 // Route::post('/destinos', [DestinoController::class, 'cambiaFiltro'])->name('cambiar_filtro');
 
 Route::post('/destinos/visitado', [DestinoController::class, 'marcarComoVisitado'])->name('visitado');
 
-//Visitados
+//VISITADOS
 Route::get('/visitados', [VisitadoController::class, 'index'])->name('visitados');

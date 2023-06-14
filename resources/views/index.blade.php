@@ -9,6 +9,7 @@
 <body></body>
 
 <main class="container ">
+    <a href="{{ route('login') }}" class="btn btn-dark rounded-2 txt-grey">Login</a>
     <section id="titulo_principal" class="bg-dark rounded-3 d-flex flex-column align-items-center px-5 mt-5 py-3">
         <h1>Travelicious</h1>
         <hr class="text-dark">

@@ -10,7 +10,8 @@ class DestinoController extends Controller
 {
     public function marcarComoVisitado(Request $request)
     {
-        $id = $request->input('id');
+        $id = $request->ID;
+        dd($request);
         // Eliminar el registro de la tabla "Destinos"
         Destino::where('id', $id)->delete();
 
@@ -29,6 +30,11 @@ class DestinoController extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    public function cambiaFiltro(Request $request)
+    {
+        
     }
 
     public function cambiaSesion(Request $request)
